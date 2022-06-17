@@ -115,7 +115,7 @@ Partial Class frmDatabaseConnectionConfig
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(152, 39)
         Me.Button2.TabIndex = 6
-        Me.Button2.Text = "&Save and Restart"
+        Me.Button2.Text = "&Save && Restart"
         Me.Button2.UseVisualStyleBackColor = True
         '
         'Button3

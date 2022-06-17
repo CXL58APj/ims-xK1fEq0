@@ -14,5 +14,8 @@
     <Setting Name="dbpassword" Type="System.String" Scope="User">
       <Value Profile="(Default)">Kf5SzBKJtfT7zg0E</Value>
     </Setting>
+    <Setting Name="logintimer" Type="System.String" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

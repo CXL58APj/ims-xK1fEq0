@@ -26,7 +26,6 @@ Public Class frmSplashScreen
                     Me.Dispose()
                 End If
             End If
-
-            End If
+        End If
     End Sub
 End Class

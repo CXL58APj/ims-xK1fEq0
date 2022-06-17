@@ -101,6 +101,18 @@ Namespace My
                 Me("dbpassword") = value
             End Set
         End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("0")>  _
+        Public Property logintimer() As String
+            Get
+                Return CType(Me("logintimer"),String)
+            End Get
+            Set
+                Me("logintimer") = value
+            End Set
+        End Property
     End Class
 End Namespace
 

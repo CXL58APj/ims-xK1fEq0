@@ -19,3 +19,4 @@ C:\Users\DELL\source\repos\ims-xK1fEq0\ims-xK1fEq0\Inventory-Management-System\I
 C:\Users\DELL\source\repos\ims-xK1fEq0\ims-xK1fEq0\Inventory-Management-System\Inventory-Management-System\bin\Debug\MySql.Data.xml
 C:\Users\DELL\source\repos\ims-xK1fEq0\ims-xK1fEq0\Inventory-Management-System\Inventory-Management-System\obj\Debug\Inventory-Management-System.vbproj.CopyComplete
 C:\Users\DELL\source\repos\ims-xK1fEq0\ims-xK1fEq0\Inventory-Management-System\Inventory-Management-System\obj\Debug\Inventory_Management_System.frmDatabaseConnectionConfig.resources
+C:\Users\DELL\source\repos\ims-xK1fEq0\ims-xK1fEq0\Inventory-Management-System\Inventory-Management-System\obj\Debug\Inventory_Management_System.Form2.resources

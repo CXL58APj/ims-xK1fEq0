@@ -14,7 +14,8 @@
     End Sub
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
-        If MessageBox.Show("Do you want to save the changes?", _title, MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.Yes Then
+        Dim _result As DialogResult = MessageBox.Show("Do you want to save the changes?", _title, MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question)
+        If _result = DialogResult.Yes Then
             My.Settings.dbserver = txtServer.Text.Trim
             My.Settings.dbport = txtPort.Text.Trim
             My.Settings.dbusername = txtUsername.Text.Trim
@@ -22,7 +23,10 @@
             My.Settings.Save()
             My.Settings.Reload()
             loadDatabaseConnectionConfig()
-            MessageBox.Show("Changes has been saved. The application will restart", _title, MessageBoxButtons.OK, MessageBoxIcon.Information)
+            MessageBox.Show("Changes has been saved. The application will restart.", _title, MessageBoxButtons.OK, MessageBoxIcon.Information)
+            Application.Restart()
+        ElseIf _result = DialogResult.No Then
+            MsgBox("No changes has been saved. The application will restart.", vbInformation)
             Application.Restart()
         End If
 
