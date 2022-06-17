@@ -115,9 +115,10 @@ Public Class frmLogin
                     End If
                     _type = dr.Item("type").ToString()
                     _fullname = dr.Item("fname").ToString() + "  " + dr.Item("lname").ToString()
-                    MsgBox("success", vbInformation)
+                    frmDashboard.lblFullnameType.Text = "Logged in as: " + _fullname + " - " + _type
                     frmDashboard.Show()
                     Me.Dispose()
+                    MsgBox("Welcome back " + _fullname + "!", vbInformation)
                 Else
                     MessageBox.Show("Account is no longer active. Please contact your administrator and try again.", _title, MessageBoxButtons.OK, MessageBoxIcon.Information)
                     dr.Close()

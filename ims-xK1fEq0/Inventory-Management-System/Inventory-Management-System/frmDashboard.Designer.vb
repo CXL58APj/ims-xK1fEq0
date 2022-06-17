@@ -22,12 +22,15 @@ Partial Class frmDashboard
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.lblDateTime = New System.Windows.Forms.Label()
+        Me.lblFullnameType = New System.Windows.Forms.Label()
+        Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.Panel2.SuspendLayout()
         Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
@@ -43,6 +46,7 @@ Partial Class frmDashboard
         '
         'Panel2
         '
+        Me.Panel2.Controls.Add(Me.lblFullnameType)
         Me.Panel2.Controls.Add(Me.lblDateTime)
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.Panel2.Location = New System.Drawing.Point(0, 415)
@@ -94,6 +98,21 @@ Partial Class frmDashboard
         Me.lblDateTime.TabIndex = 1
         Me.lblDateTime.Text = "Day, dd/mm/yyyy 00:00:00 PM"
         '
+        'lblFullnameType
+        '
+        Me.lblFullnameType.Anchor = System.Windows.Forms.AnchorStyles.Left
+        Me.lblFullnameType.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblFullnameType.Location = New System.Drawing.Point(12, 10)
+        Me.lblFullnameType.Name = "lblFullnameType"
+        Me.lblFullnameType.Size = New System.Drawing.Size(470, 23)
+        Me.lblFullnameType.TabIndex = 2
+        Me.lblFullnameType.Text = "Logged in as: "
+        '
+        'Timer1
+        '
+        Me.Timer1.Enabled = True
+        Me.Timer1.Interval = 1000
+        '
         'frmDashboard
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -119,4 +138,6 @@ Partial Class frmDashboard
     Friend WithEvents Label6 As Label
     Friend WithEvents Label5 As Label
     Friend WithEvents lblDateTime As Label
+    Friend WithEvents lblFullnameType As Label
+    Friend WithEvents Timer1 As Timer
 End Class
