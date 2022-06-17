@@ -158,7 +158,7 @@ Partial Class frmLogin
         '
         Me.lblDateTime.Anchor = System.Windows.Forms.AnchorStyles.Right
         Me.lblDateTime.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblDateTime.Location = New System.Drawing.Point(571, 8)
+        Me.lblDateTime.Location = New System.Drawing.Point(571, 9)
         Me.lblDateTime.Name = "lblDateTime"
         Me.lblDateTime.RightToLeft = System.Windows.Forms.RightToLeft.Yes
         Me.lblDateTime.Size = New System.Drawing.Size(260, 23)
@@ -182,16 +182,16 @@ Partial Class frmLogin
         Me.Panel5.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel5.Location = New System.Drawing.Point(0, 35)
         Me.Panel5.Name = "Panel5"
-        Me.Panel5.Size = New System.Drawing.Size(838, 503)
+        Me.Panel5.Size = New System.Drawing.Size(838, 501)
         Me.Panel5.TabIndex = 10
         '
         'Panel6
         '
         Me.Panel6.Controls.Add(Me.lblDateTime)
         Me.Panel6.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Panel6.Location = New System.Drawing.Point(0, 538)
+        Me.Panel6.Location = New System.Drawing.Point(0, 536)
         Me.Panel6.Name = "Panel6"
-        Me.Panel6.Size = New System.Drawing.Size(838, 33)
+        Me.Panel6.Size = New System.Drawing.Size(838, 35)
         Me.Panel6.TabIndex = 9
         '
         'Panel7

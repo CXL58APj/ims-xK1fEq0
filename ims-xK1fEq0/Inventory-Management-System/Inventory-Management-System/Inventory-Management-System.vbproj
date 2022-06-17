@@ -88,6 +88,12 @@
     <Compile Include="Form2.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="frmDashboard.Designer.vb">
+      <DependentUpon>frmDashboard.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmDashboard.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmDatabaseConnectionConfig.Designer.vb">
       <DependentUpon>frmDatabaseConnectionConfig.vb</DependentUpon>
     </Compile>
@@ -122,6 +128,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form2.resx">
       <DependentUpon>Form2.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDashboard.resx">
+      <DependentUpon>frmDashboard.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmDatabaseConnectionConfig.resx">
       <DependentUpon>frmDatabaseConnectionConfig.vb</DependentUpon>

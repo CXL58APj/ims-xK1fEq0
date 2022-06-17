@@ -57,6 +57,18 @@ Public Class frmLogin
         End If
     End Sub
 
+    Private Sub txtId_KeyDown(sender As Object, e As KeyEventArgs) Handles txtId.KeyDown
+        If e.KeyCode = Keys.Enter Then
+            btnLogin.PerformClick()
+        End If
+    End Sub
+
+    Private Sub txtPassword_KeyDown(sender As Object, e As KeyEventArgs) Handles txtPassword.KeyDown
+        If e.KeyCode = Keys.Enter Then
+            btnLogin.PerformClick()
+        End If
+    End Sub
+
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles btnLogin.Click
         ' Login attempt
         If _loginAttempts = 5 Then
@@ -104,7 +116,8 @@ Public Class frmLogin
                     _type = dr.Item("type").ToString()
                     _fullname = dr.Item("fname").ToString() + "  " + dr.Item("lname").ToString()
                     MsgBox("success", vbInformation)
-                    ' DO SOMETHING
+                    frmDashboard.Show()
+                    Me.Dispose()
                 Else
                     MessageBox.Show("Account is no longer active. Please contact your administrator and try again.", _title, MessageBoxButtons.OK, MessageBoxIcon.Information)
                     dr.Close()
