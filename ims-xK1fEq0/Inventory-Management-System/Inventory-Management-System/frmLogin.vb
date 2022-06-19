@@ -3,7 +3,7 @@ Public Class frmLogin
     Dim _loginAttempts As Integer = 0
     Dim _timer As Integer = 0
     Dim _sec As String = "s"
-    Dim _fullname, _type As String
+    Dim _fullname, _type, _id As String
     Dim _title = "Inventory Management System"
 
     Private Sub frmLogin_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -29,6 +29,7 @@ Public Class frmLogin
     End Sub
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles btnClose.Click
+        frmDashboard.Show()
         Me.Dispose()
     End Sub
 
@@ -86,21 +87,30 @@ Public Class frmLogin
 
         'Check fields if empty
         If String.IsNullOrWhiteSpace(txtId.Text) Then
-            MessageBox.Show("Id Number is required. Please do not leave the fields empty and try again.", "Barangay Document System", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            MessageBox.Show("Id Number is required. Please do not leave the fields empty and try again.", _title, MessageBoxButtons.OK, MessageBoxIcon.Warning)
             _loginAttempts += 1
-            txtId.Focus()
+            txtId.Select()
             Exit Sub
         End If
         If String.IsNullOrWhiteSpace(txtPassword.Text) Then
             MessageBox.Show("Password is required. Please do not leave the fields empty and try again.", _title, MessageBoxButtons.OK, MessageBoxIcon.Warning)
             _loginAttempts += 1
-            txtPassword.Focus()
+            txtPassword.Select()
             Exit Sub
         End If
 
-
+        Dim _hash As String = ""
+        Dim _password As String = txtPassword.Text
+        For Each letter As String In _password
+            _hash += Chr(Asc(letter) + _password.Length)
+        Next
         cn.Open()
-        cm = New MySqlCommand("SELECT * FROM tblusers WHERE `user-id` = '" & txtId.Text & "' AND `password`='" & txtPassword.Text & "'", cn)
+        cm = New MySqlCommand("SELECT * FROM tblusers WHERE `user-id` = @userid AND `password`=MD5(@password)", cn)
+        With cm
+            .Parameters.AddWithValue("@userid", txtId.Text.Trim)
+            .Parameters.AddWithValue("@password", _hash)
+        End With
+
         dr = cm.ExecuteReader()
 
         If (dr.HasRows) Then
@@ -115,12 +125,15 @@ Public Class frmLogin
                     End If
                     _type = dr.Item("type").ToString()
                     _fullname = dr.Item("fname").ToString() + "  " + dr.Item("lname").ToString()
+                    _id = dr.Item("user-id").ToString()
+                    frmDashboard.txtId.Text = _id
+                    frmDashboard.txtuserpassword.Text = txtPassword.Text
                     frmDashboard.lblFullnameType.Text = "Logged in as: " + _fullname + " - " + _type
                     frmDashboard.Show()
                     Me.Dispose()
                     MsgBox("Welcome back " + _fullname + "!", vbInformation)
                 Else
-                    MessageBox.Show("Account is no longer active. Please contact your administrator and try again.", _title, MessageBoxButtons.OK, MessageBoxIcon.Information)
+                    MessageBox.Show("Account is no longer active. Please contact your administrator  to request for the reactivation of your account.", _title, MessageBoxButtons.OK, MessageBoxIcon.Information)
                     dr.Close()
                     cm.Dispose()
                     cn.Close()
