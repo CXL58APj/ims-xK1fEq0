@@ -37,11 +37,11 @@ Partial Class frmDashboard
         Me.lblFullnameType = New System.Windows.Forms.Label()
         Me.lblDateTime = New System.Windows.Forms.Label()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.txtuserpassword = New System.Windows.Forms.TextBox()
         Me.txtId = New System.Windows.Forms.TextBox()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
-        Me.txtuserpassword = New System.Windows.Forms.TextBox()
         Me.Panel3.SuspendLayout()
         Me.MenuStrip1.SuspendLayout()
         Me.Panel2.SuspendLayout()
@@ -159,6 +159,15 @@ Partial Class frmDashboard
         Me.Panel1.Size = New System.Drawing.Size(878, 35)
         Me.Panel1.TabIndex = 3
         '
+        'txtuserpassword
+        '
+        Me.txtuserpassword.Location = New System.Drawing.Point(640, 9)
+        Me.txtuserpassword.Name = "txtuserpassword"
+        Me.txtuserpassword.ReadOnly = True
+        Me.txtuserpassword.Size = New System.Drawing.Size(100, 20)
+        Me.txtuserpassword.TabIndex = 12
+        Me.txtuserpassword.Visible = False
+        '
         'txtId
         '
         Me.txtId.Location = New System.Drawing.Point(746, 9)
@@ -195,15 +204,6 @@ Partial Class frmDashboard
         '
         Me.Timer1.Enabled = True
         Me.Timer1.Interval = 1000
-        '
-        'txtuserpassword
-        '
-        Me.txtuserpassword.Location = New System.Drawing.Point(640, 9)
-        Me.txtuserpassword.Name = "txtuserpassword"
-        Me.txtuserpassword.ReadOnly = True
-        Me.txtuserpassword.Size = New System.Drawing.Size(100, 20)
-        Me.txtuserpassword.TabIndex = 12
-        Me.txtuserpassword.Visible = False
         '
         'frmDashboard
         '

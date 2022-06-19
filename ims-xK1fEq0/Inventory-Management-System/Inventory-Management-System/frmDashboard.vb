@@ -18,4 +18,8 @@
     Private Sub ACCOUNTSETTINGSToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ACCOUNTSETTINGSToolStripMenuItem.Click
         frmAccountSettings.ShowDialog()
     End Sub
+
+    Private Sub DATABASECONNECTIONCONFIGToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles DATABASECONNECTIONCONFIGToolStripMenuItem.Click
+        frmDatabaseConnectionConfig.ShowDialog()
+    End Sub
 End Class

@@ -29,7 +29,6 @@ Public Class frmLogin
     End Sub
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles btnClose.Click
-        frmDashboard.Show()
         Me.Dispose()
     End Sub
 
